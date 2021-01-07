@@ -38,12 +38,15 @@ const PageList = [
     RouteCreater({
         path: "/DDGames/Jinro",
         component: Jinro,
-        viewName: "一人狼ゲーム",
+        viewName: "一人狼",
+        exact: true,
     }),
     RouteCreater({
         path: "/DDGames/Jinro/Characters",
-        component: Jinro,
-        viewName: "一人狼ゲーム",
+        component: JinroCharacters,
+        viewName: "人狼/キャラクター",
+        exact: true,
+        menuView: false,
     }),
     RouteCreater({
         path: "/DDGames/Othello",

@@ -1,10 +1,14 @@
 const CreateCharacter = ({
     id,
     name,
+    param01 = 5,
+    param02 = 5,
 }) => {
     return ({
         ID: id,
-        Name: name
+        Name: name,
+        Param01: param01,
+        Param02: param02,
     });
 };
 

@@ -9,7 +9,7 @@ const Jinro = () => {
     return (
         <div>
             {"Jinro"}
-            <Link to={"/Characters"}>{"紹介"}</Link>
+            <Link to={"/DDGames/Jinro/Characters"}>{"紹介"}</Link>
         </div>
     )
 }
