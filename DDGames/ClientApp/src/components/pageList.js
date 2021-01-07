@@ -1,5 +1,6 @@
 import TopPage from "./Top";
 import Jinro from "./Jinro";
+import JinroCharacters from "./Jinro/CharacterViewPage";
 import { Board as Othello } from "./Othello/board";
 import {
     Menu as MenuIcon,
@@ -27,7 +28,7 @@ const RouteCreater = ({
 
 const PageList = [
     RouteCreater({
-        path: "",
+        path: "/DDGames",
         component: TopPage,
         viewName: "トップページ",
         icon: MenuIcon,
@@ -35,15 +36,20 @@ const PageList = [
         menuView: false
     }),
     RouteCreater({
-        path: "Jinro",
+        path: "/DDGames/Jinro",
         component: Jinro,
         viewName: "一人狼ゲーム",
     }),
     RouteCreater({
-        path: "Othello",
+        path: "/DDGames/Jinro/Characters",
+        component: Jinro,
+        viewName: "一人狼ゲーム",
+    }),
+    RouteCreater({
+        path: "/DDGames/Othello",
         component: Othello,
         viewName: "オセロ"
-    })
+    }),
 ];
 
 export default (PageList);

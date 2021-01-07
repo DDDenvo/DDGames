@@ -14,7 +14,8 @@ import {
 import {
     Menu as MenuIcon,
     Home as HomeIcon,
-} from "@material-ui/icons"
+} from "@material-ui/icons";
+import { Switch, Route, useHistory } from "react-router-dom";
 
 import PageList from "./pageList";
 
@@ -22,10 +23,11 @@ const APP_BAR_HEIGHT = 48;
 
 const PageRouter = () => {
 
-    const [path, setPath] = useState("Othello");
     const [open, setOpen] = useState({
         left: false,
     });
+
+    const history = useHistory();
 
     const Drawer = () => {
         const toggleDrawer = (anchor, value) => {
@@ -33,7 +35,7 @@ const PageRouter = () => {
         }
 
         const ChangePage = (path) => {
-            setPath(path);
+            history.push(path);
             setOpen({ ...open, left: false })
         }
 
@@ -41,7 +43,7 @@ const PageRouter = () => {
             return (
                 <div>
                     <div>
-                        <IconButton onClick={() => ChangePage("")}>
+                        <IconButton onClick={() => ChangePage("/DDGames")}>
                             <HomeIcon />
                         </IconButton>
                     </div>
@@ -85,7 +87,7 @@ const PageRouter = () => {
                             <MenuIcon />
                         </IconButton>
                         <Typography>
-                            {"めにゅ～"}
+                            {"Menu"}
                         </Typography>
                     </Toolbar>
                 </AppBar>
@@ -104,14 +106,13 @@ const PageRouter = () => {
     return (
         <div>
             <Drawer />
-            {PageList.map((page, index) => {
-                return (
-                    <React.Fragment key={index}>
-                        {page.path === path && <page.component />}
-                    </React.Fragment>
-
-                )
-            })}
+            <Switch>
+                {PageList.map((page) => {
+                    return (
+                        <Route key={page.path} path={page.path} component={page.component} exact={page.exact} />
+                    )
+                })}
+            </Switch>
         </div>
     )
 }

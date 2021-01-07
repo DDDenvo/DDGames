@@ -1,19 +1,15 @@
 import React from "react";
 import Characters from "./Characters";
+import { useHistory, Link } from "react-router-dom";
 
 const Jinro = () => {
+
+    const history = useHistory();
+
     return (
         <div>
             {"Jinro"}
-            <div>
-                {Characters.map((chara) => {
-                    return (
-                        <div>
-                            {chara.Name}
-                        </div>
-                    )
-                })}
-            </div>
+            <Link to={"/Characters"}>{"紹介"}</Link>
         </div>
     )
 }
