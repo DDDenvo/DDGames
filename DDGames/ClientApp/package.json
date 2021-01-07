@@ -2,7 +2,7 @@
   "name": "sw",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://dddenvo.github.io/sw/",
+  "homepage": "https://dddenvo.github.io/DDGames/",
   "dependencies": {
     "@material-ui/core": "^4.10.0",
     "@material-ui/icons": "^4.9.1",
